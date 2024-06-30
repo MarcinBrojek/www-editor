@@ -54,9 +54,9 @@ In project used:
 
 **Application preview**
 
-:-------------------------:|:-------------------------:|:-------------------------:  
+: Code example            :|: Night mode              :|: Account register        :  
 :-------------------------:|:-------------------------:|:-------------------------:
-![]()  |  ![]() | ![]()
+ <img alt="1" src="https://github.com/MarcinBrojek/www_editor/assets/73189722/3315edb0-0d1f-4eb8-934b-14e4160b7fcb"> | <img alt="2" src="https://github.com/MarcinBrojek/www_editor/assets/73189722/cae3951f-5736-4e79-8625-ad037621ab2a"> | <img alt="3" src="https://github.com/MarcinBrojek/www_editor/assets/73189722/e785dd6b-710f-462c-a98c-d89f4be25ace">
 
 ---
 
