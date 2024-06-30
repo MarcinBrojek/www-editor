@@ -1,0 +1,263 @@
+:root {
+    /* colors base */
+    --color-one: #02284D;
+    --color-two: #1B3A57;
+    --color-three: #A2ADB8;
+    --color-four: #E1E2E3;
+
+    /* default bgs colors */
+    --bg-menu: var(--color-one);
+    --bg-tab-selector: var(--color-one);
+    --bg-bar: var(--color-one);
+    --bg-files: var(--color-three);
+    --bg-details: var(--color-three);
+    --bg-tab-content: var(--color-three);
+    --bg-code: var(--color-four);
+    --text-main-color: var(--color-four);
+    --text-code-color: var(--color-one);
+
+    --bg-light-menu: var(--color-one);
+    --bg-light-tab-selector: var(--color-one);
+    --bg-light-bar: var(--color-one);
+    --bg-light-files: var(--color-three);
+    --bg-light-details: var(--color-three);
+    --bg-light-tab-content: var(--color-three);
+    --bg-light-code: var(--color-four);
+    --text-light-main-color: var(--color-four);
+    --text-light-code-color: var(--color-one);
+
+    --bg-dark-menu: var(--color-four);
+    --bg-dark-tab-selector: var(--color-four);
+    --bg-dark-bar: var(--color-four);
+    --bg-dark-files: var(--color-two);
+    --bg-dark-details: var(--color-two);
+    --bg-dark-tab-content: var(--color-two);
+    --bg-dark-code: var(--color-one);
+    --text-dark-main-color: var(--color-one);
+    --text-dark-code-color: var(--color-four);
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    color: var(--text-main-color);
+}
+
+div {
+    float: left;
+    display: block;
+    width: 100%;
+}
+
+.right-div {
+    float: right;
+}
+
+.menu-button, .tab-button {
+    display: flex;
+    height: 100%;
+    width: auto;
+    padding: 0 1%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.text-size {
+    font-size: 16px;
+}
+
+.code-style {
+    font-family: 'Courier New', monospace;
+    white-space: pre;
+}
+
+#left-bar, #right-bar {
+    height: 100%;
+    width: 3px;
+    background: var(--bg-bar);
+}
+
+#menu {
+    height: 4%;
+    width: 100%;
+    background: var(--bg-menu);
+}
+
+.menu-button {
+    font-size: 2vh;
+}
+
+.menu-button:hover {
+    background: var(--text-main-color);
+    color: var(--bg-menu);
+}
+
+#main {
+    height: 96%;
+    width: 100%;
+}
+
+#files {
+    height: 100%;
+    width: 12%;
+    background: var(--bg-files);
+}
+
+#files-content {
+    height: 100%;
+    width: calc(100% - 3px);
+    overflow: scroll;
+    color: var(--text-code-color);
+    padding: 5px;
+    font-size: 2vh;
+    box-sizing: border-box;
+}
+
+#left-bar {
+    float: right;
+}
+
+#editor {
+    height: 100%;
+    width: 88%;
+}
+
+#view {
+    height: 85%;
+    width: 100%;
+}
+
+#code {
+    height: 100%;
+    width: 80%;
+    background: var(--bg-code);
+    color: var(--text-code-color);
+    overflow: scroll;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#added-content{
+    float: unset;
+    text-align: left;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    max-height:150px;
+}
+
+#code-content {
+    height: 100%;
+}
+
+.CodeMirror {
+    border: 1px solid #eee;
+    width: 100%;
+    height: 100%;
+}
+
+.CodeMirror-line-numbers .line-number{
+    font-family: 'Courier New', monospace;
+    white-space: pre;
+    width: auto;
+}
+
+.center {
+    width: 100%;
+    text-align: center;
+}
+
+#details {
+    height: 100%;
+    width: 20%;
+    background: var(--bg-details);
+    color: var(--text-code-color);
+}
+
+#right-bar {
+    float: left;
+}
+
+#details-content {
+    height: 100%;
+    width: calc(100% - 3px);
+    overflow: scroll;
+    color: var(--text-code-color);
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#tabs {
+    height: 15%;
+    width: 100%;
+}
+
+#bottom-bar {
+    float: top;
+    width: 100%;
+    height: 3px;
+    background: var(--bg-bar);
+}
+
+#tab-selector {
+    height: 3vh;
+    width: 100%;
+    background: var(--bg-tab-selector);
+}
+
+.tab-button {
+    font-size: 1.5vh;
+}
+
+#tab-content {
+    height: calc(100% - 3vh - 3px);
+    width: 100%;
+    background: var(--bg-tab-content);
+    overflow: scroll;
+    color: var(--text-code-color);
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.tab-none {
+    display: none;
+}
+
+#code-add-button {
+    width: 6%;
+    margin-left: 48%;
+    margin-right: 48%;
+    margin-top: 2%;
+}
+
+#calcJs {
+    height: 0;
+    display: none;
+}
+
+@media (max-width: 1023px), (max-height: 719px) {
+
+    #left-bar, #right-bar, #bottom-bar, #menu-button6, #menu-button7, #menu-button8 {
+        display: none;
+    }
+
+    #files-content, #details-content, #tab-content, #code {
+        overflow-y: hidden;
+    }
+
+    #menu, #main, #view, #tabs, #tab-content {
+        height: auto;
+    }
+
+    #files, #files-content, #editor, #code, #details, #details-content {
+        width: 100%;
+    }
+
+    #tabs {
+        border-top: 0.5vh solid var(--bg-tab-selector);
+    }
+}

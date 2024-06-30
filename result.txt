@@ -1,0 +1,3 @@
+[wp] Proved goals:    6 / 6
+Qed:               3  (0.80ms-2ms-4ms)
+Alt-Ergo 2.2.0:    3  (11ms-12ms) (47)

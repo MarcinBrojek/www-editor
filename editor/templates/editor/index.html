@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Code editor</title>
+    <meta charset="utf-8">
+    <script src="{% static 'codemirror-5.61.1/lib/codemirror.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'codemirror-5.61.1/lib/codemirror.css' %}">
+    <script src="{% static 'codemirror-5.61.1/mode/javascript/javascript.js' %}"></script>
+    <script src="{% static 'codemirror-5.61.1/mode/clike/clike.js' %}" type="text/javascript"></script>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div id="menu">
+        <div id="menu-button1" class="menu-button"> File </div>
+        <div id="menu-button-1a" class="menu-button"> Back </div>
+        <div id="menu-button-1b" class="menu-button"> Up </div>
+        <div id="menu-button-1c" class="menu-button"> Down </div>
+        <div id="menu-button-1d" class="menu-button"> In </div>
+
+        <div id="menu-button2" class="menu-button"> Edit </div>
+        <div id="menu-button-2a" class="menu-button"> Add </div>
+        <div id="menu-button-2b" class="menu-button"> Remove </div>
+
+        <div id="menu-button3" class="menu-button"> Rerun </div>
+        <div id="menu-button4" class="menu-button"> Code </div>
+        <div id="menu-button5" class="menu-button"> Help </div>
+        <div id="menu-button10" class="menu-button right-div"> 👤 </div>
+        <div id="menu-button9" class="menu-button right-div"> Mode </div>
+        <div id="menu-button8" class="menu-button right-div"> Tabs </div>
+        <div id="menu-button7" class="menu-button right-div"> Details </div>
+        <div id="menu-button6" class="menu-button right-div"> Project </div>
+    </div>
+    <div id="main">
+        <div id="files">
+            <div id="left-bar"></div>
+            <div id="files-content"></div>
+        </div>
+        <div id="editor">
+            <div id="view">
+                <div id="code" class="text-size">
+                    <div id="code-content" class="code-style"></div>
+                    <div id="code-info" class="center">
+                        <div id="file-dir-sect-add" class="center">
+                            <label for="select-added-type">Type:</label>
+                            <select name="Type" id="select-added-type">
+                                <option value="Directory" id="directory-option">Directory</option>
+                                <option value="File" id="file-option">File</option>
+                                <option value="FileSection" id="section-option">File Section</option>
+                            </select>
+                            <br>
+                            <label for="added-name">Name:</label>
+                            <input type="text" id="added-name">
+                            <br>
+                            <label for="added-description">Description:</label>
+                            <input type="text" id="added-description">
+                            <br>
+                            <label for="added-category" id="label-category">Category:</label>
+                            <input type="text" id="added-category">
+                            <br>
+                            <label for="added-content" id="label-content">Content:</label>
+                            <div id="added-content"></div>
+                            <label for="added-number" id="label-number">Number of last line:</label>
+                            <input type="number" id="added-number">
+                            <br>
+                            <button id="code-add-button"> Add </button>
+                        </div>
+                        <div id="file-dir-sect-remove" class="center">
+                            <button id="select-removed-button"> Choose selected </button>
+                            <br>
+                            <label for="select-removed-type">Type:</label>
+                            <select name="Type" id="select-removed-type">
+                                <option value="Directory">Directory</option>
+                                <option value="File">File</option>
+                                <option value="FileSection">File Section</option>
+                            </select>
+                            <br>
+                            <label for="removed-name">Name:</label>
+                            <input type="text" id="removed-name">
+                            <br>
+                            <button id="code-remove-button"> Remove </button>
+                        </div>
+                    </div>
+                    <div id="profile-window" class="center">
+                        <div id="login-section" class="center">
+                            <button id="register-link"> I don't have account </button>
+                            <br>
+                            <label for="login-login">Login:</label>
+                            <input type="text" id="login-login">
+                            <br>
+                            <label for="login-password">Password:</label>
+                            <input type="password" id="login-password">
+                            <br>
+                            <button id="login-button"> Login </button>
+                            <br>
+                        </div>
+                        <div id="register-section" class="center">
+                            <label for="register-name">Name:</label>
+                            <input type="text" id="register-name">
+                            <br>
+                            <label for="register-login">Login:</label>
+                            <input type="text" id="register-login">
+                            <br>
+                            <label for="register-password">Password:</label>
+                            <input type="password" id="register-password">
+                            <br>
+                            <label for="register-rep-password">Repeated password:</label>
+                            <input type="password" id="register-rep-password">
+                            <br>
+                            <button id="register-button"> Register </button>
+                            <br>
+                        </div>
+                        <div id="login-info" class="center"></div>
+                        <button id="logout"> Log out </button>
+                    </div>
+                    <div id="help-window" class="center">
+                        Menu bar operations shortcuts: <br><br>
+                        --Go to menu bar actions: <br><br>
+                        Key F : -> File | navigation for file selection dialog <br><br>
+                        Key E : -> Edit | open view to add / remove directory, datalog, file section <br><br>
+                        Key C : -> Code | show code of file / file section <br><br>
+                        Key H : -> Help | you are here <br><br>
+                        Key M : -> Mode | change mode light / dark <br><br>
+                        Key P : -> Profile emoji | go to login screen <br><br>
+                        --Some actions to simplify operations: <br><br>
+                        Key arrow left : -> File -> Back | go to parent location <br><br>
+                        Key arrow up : -> File -> Up | go up in list <br><br>
+                        Key arrow right : -> File -> In | go to chosen son location <br><br>
+                        Key arrow down : -> File -> Down | go down in list <br><br>
+                        Key A: -> Edit -> Add | open view to add directory, file, file section <br><br>
+                        Key R: -> Edit -> Remove | open view to remove directory, file, file section <br><br>
+                        Key T : go to next tab <br><br>
+                        Actually that shortcuts are not working while actions: Add, Remove, Login, Register. <br><br>
+                        except one - Key Escape : hide view of code window, view of menu bar additional options
+                    </div>
+                </div>
+                <div id="details">
+                    <div id="right-bar"></div>
+                    <div id="details-content" class="text-size"></div>
+                </div>
+            </div>
+            <div id="tabs">
+                <div id="bottom-bar"></div>
+                <div id="tab-selector">
+                    <div id="tab-button1" class="tab-button"> Provers </div>
+                    <div id="tab-button2" class="tab-button"> VCs </div>
+                    <div id="tab-button3" class="tab-button"> Result </div>
+{#                    <div id="tab-button4" class="tab-button"> Tab4 </div>#}
+                </div>
+                <div id="tab-content" class="text-size">
+                    <div id="tab-content1" class="tab-none">
+                        Provers (only 1 works):
+                        <button id="Alt"> Alt-Ergo </button> |
+                        <button id="Z3"> Z3 </button> |
+                        <button id="CVC4"> CVC4 </button>
+                        <br>
+                        <div id = "prover-comment"></div>
+                    </div>
+                    <div id="tab-content2" class="tab-none">
+                        Write option for -wp-prop: <input type="text" id="prop-content">
+                        <br>
+                        Runtime guard verification conditions:
+                        <button id="rte">-wp-rte</button> |
+                        <button id="prop">-wp-prop="..."</button>
+                        <br>
+                        <div id="vcs-comment"></div>
+                    </div>
+                    <div id="tab-content3" class="tab-none code-style"></div>
+{#                    <div id="tab-content4" class="tab-none code-style"></div>#}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="calcJs"> </div>
+    <script type="text/javascript" src="{% static 'jquery.js' %}"></script>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
+
