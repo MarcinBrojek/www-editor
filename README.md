@@ -1,4 +1,4 @@
-## Online editor
+# Online editor
 
 This repository hosts a web application designed for writing programs in the C language. It functions as an online text editor that enables users to create programs directly within a web-based environment. The application operates as a single-page web app, ensuring a seamless user experience without the need for page refreshes.
 
